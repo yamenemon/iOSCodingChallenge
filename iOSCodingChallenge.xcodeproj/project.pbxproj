@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A0EEB4A21FC9850000E5EF0 /* VehicleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0EEB4921FC9850000E5EF0 /* VehicleListViewController.m */; };
 		9AF4FE6421FB61E4006DDD17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6321FB61E4006DDD17 /* AppDelegate.swift */; };
-		9AF4FE6621FB61E4006DDD17 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6521FB61E4006DDD17 /* FirstViewController.swift */; };
-		9AF4FE6821FB61E4006DDD17 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6721FB61E4006DDD17 /* SecondViewController.swift */; };
 		9AF4FE6B21FB61E4006DDD17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6921FB61E4006DDD17 /* Main.storyboard */; };
 		9AF4FE6D21FB61E8006DDD17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6C21FB61E8006DDD17 /* Assets.xcassets */; };
 		9AF4FE7021FB61E8006DDD17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6E21FB61E8006DDD17 /* LaunchScreen.storyboard */; };
 		9AF4FE7B21FB61E8006DDD17 /* iOSCodingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE7A21FB61E8006DDD17 /* iOSCodingChallengeTests.swift */; };
+		9AF4FE8621FB6236006DDD17 /* VehicleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE8521FB6236006DDD17 /* VehicleViewController.swift */; };
+		9AF4FE8821FB6247006DDD17 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE8721FB6247006DDD17 /* MapViewController.swift */; };
+		9AF4FE9021FB6AC3006DDD17 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE8F21FB6AC3006DDD17 /* Constants.swift */; };
+		9AF4FE9221FB71D5006DDD17 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE9121FB71D5006DDD17 /* NetworkManager.swift */; };
+		9AF4FE9421FB7651006DDD17 /* VehicleMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE9321FB7651006DDD17 /* VehicleMapViewModel.swift */; };
+		9AF4FE9821FB81A5006DDD17 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF4FE9721FB81A5006DDD17 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,10 +32,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A0EEB4821FC9850000E5EF0 /* VehicleListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VehicleListViewController.h; sourceTree = "<group>"; };
+		9A0EEB4921FC9850000E5EF0 /* VehicleListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VehicleListViewController.m; sourceTree = "<group>"; };
+		9A0EEB4B21FC9884000E5EF0 /* iOSCodingChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSCodingChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
 		9AF4FE6021FB61E4006DDD17 /* iOSCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF4FE6321FB61E4006DDD17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9AF4FE6521FB61E4006DDD17 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		9AF4FE6721FB61E4006DDD17 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		9AF4FE6A21FB61E4006DDD17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9AF4FE6C21FB61E8006DDD17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AF4FE6F21FB61E8006DDD17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +44,12 @@
 		9AF4FE7621FB61E8006DDD17 /* iOSCodingChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iOSCodingChallengeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF4FE7A21FB61E8006DDD17 /* iOSCodingChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOSCodingChallengeTests.swift; sourceTree = "<group>"; };
 		9AF4FE7C21FB61E8006DDD17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9AF4FE8521FB6236006DDD17 /* VehicleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleViewController.swift; sourceTree = "<group>"; };
+		9AF4FE8721FB6247006DDD17 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9AF4FE8F21FB6AC3006DDD17 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9AF4FE9121FB71D5006DDD17 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		9AF4FE9321FB7651006DDD17 /* VehicleMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleMapViewModel.swift; sourceTree = "<group>"; };
+		9AF4FE9721FB81A5006DDD17 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +91,12 @@
 		9AF4FE6221FB61E4006DDD17 /* iOSCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				9AF4FE6321FB61E4006DDD17 /* AppDelegate.swift */,
-				9AF4FE6521FB61E4006DDD17 /* FirstViewController.swift */,
-				9AF4FE6721FB61E4006DDD17 /* SecondViewController.swift */,
-				9AF4FE6921FB61E4006DDD17 /* Main.storyboard */,
-				9AF4FE6C21FB61E8006DDD17 /* Assets.xcassets */,
-				9AF4FE6E21FB61E8006DDD17 /* LaunchScreen.storyboard */,
-				9AF4FE7121FB61E8006DDD17 /* Info.plist */,
+				9AF4FE8D21FB6A22006DDD17 /* AppDelegate */,
+				9AF4FE8C21FB6965006DDD17 /* Controllers */,
+				9AF4FE8E21FB6A39006DDD17 /* Resources */,
+				9AF4FE8921FB651C006DDD17 /* ViewModel */,
+				9AF4FE8B21FB6537006DDD17 /* Model */,
+				9AF4FE8A21FB652B006DDD17 /* View */,
 			);
 			path = iOSCodingChallenge;
 			sourceTree = "<group>";
@@ -97,6 +108,62 @@
 				9AF4FE7C21FB61E8006DDD17 /* Info.plist */,
 			);
 			path = iOSCodingChallengeTests;
+			sourceTree = "<group>";
+		};
+		9AF4FE8921FB651C006DDD17 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9AF4FE9321FB7651006DDD17 /* VehicleMapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9AF4FE8A21FB652B006DDD17 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9AF4FE6921FB61E4006DDD17 /* Main.storyboard */,
+				9AF4FE6E21FB61E8006DDD17 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9AF4FE8B21FB6537006DDD17 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9AF4FE9121FB71D5006DDD17 /* NetworkManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9AF4FE8C21FB6965006DDD17 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9AF4FE8521FB6236006DDD17 /* VehicleViewController.swift */,
+				9AF4FE8721FB6247006DDD17 /* MapViewController.swift */,
+				9A0EEB4821FC9850000E5EF0 /* VehicleListViewController.h */,
+				9A0EEB4921FC9850000E5EF0 /* VehicleListViewController.m */,
+				9A0EEB4B21FC9884000E5EF0 /* iOSCodingChallenge-Bridging-Header.h */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9AF4FE8D21FB6A22006DDD17 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				9AF4FE6321FB61E4006DDD17 /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		9AF4FE8E21FB6A39006DDD17 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9AF4FE6C21FB61E8006DDD17 /* Assets.xcassets */,
+				9AF4FE9721FB81A5006DDD17 /* Default-568h@2x.png */,
+				9AF4FE7121FB61E8006DDD17 /* Info.plist */,
+				9AF4FE8F21FB6AC3006DDD17 /* Constants.swift */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +216,7 @@
 				TargetAttributes = {
 					9AF4FE5F21FB61E4006DDD17 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					9AF4FE7521FB61E8006DDD17 = {
 						CreatedOnToolsVersion = 10.1;
@@ -182,6 +250,7 @@
 			files = (
 				9AF4FE7021FB61E8006DDD17 /* LaunchScreen.storyboard in Resources */,
 				9AF4FE6D21FB61E8006DDD17 /* Assets.xcassets in Resources */,
+				9AF4FE9821FB81A5006DDD17 /* Default-568h@2x.png in Resources */,
 				9AF4FE6B21FB61E4006DDD17 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,9 +269,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AF4FE6821FB61E4006DDD17 /* SecondViewController.swift in Sources */,
+				9AF4FE8621FB6236006DDD17 /* VehicleViewController.swift in Sources */,
 				9AF4FE6421FB61E4006DDD17 /* AppDelegate.swift in Sources */,
-				9AF4FE6621FB61E4006DDD17 /* FirstViewController.swift in Sources */,
+				9AF4FE9221FB71D5006DDD17 /* NetworkManager.swift in Sources */,
+				9A0EEB4A21FC9850000E5EF0 /* VehicleListViewController.m in Sources */,
+				9AF4FE8821FB6247006DDD17 /* MapViewController.swift in Sources */,
+				9AF4FE9421FB7651006DDD17 /* VehicleMapViewModel.swift in Sources */,
+				9AF4FE9021FB6AC3006DDD17 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,8 +372,10 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -353,6 +428,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -364,15 +440,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = ZQU86K7YHS;
-				INFOPLIST_FILE = iOSCodingChallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/iOSCodingChallenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-enable-bridging-pch";
 				PRODUCT_BUNDLE_IDENTIFIER = com.emon.iOSCodingChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSCodingChallenge/Controllers/iOSCodingChallenge-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -382,15 +465,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = ZQU86K7YHS;
-				INFOPLIST_FILE = iOSCodingChallenge/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/iOSCodingChallenge/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-enable-bridging-pch";
 				PRODUCT_BUNDLE_IDENTIFIER = com.emon.iOSCodingChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "iOSCodingChallenge/Controllers/iOSCodingChallenge-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
