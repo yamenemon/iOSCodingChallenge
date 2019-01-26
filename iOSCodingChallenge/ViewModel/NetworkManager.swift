@@ -13,7 +13,7 @@ enum Result<T> {
     case failure(Error)
 }
 
-class NetworkManager {
+public class NetworkManager {
     
     static func get<K: Codable>(url: URL, completion: @escaping (Result<K>) -> Void) {
         var request = URLRequest(url: url)
