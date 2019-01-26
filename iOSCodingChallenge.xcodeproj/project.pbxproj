@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		9A0EEB4A21FC9850000E5EF0 /* VehicleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0EEB4921FC9850000E5EF0 /* VehicleListViewController.m */; };
+		9A0EEB4F21FCBE06000E5EF0 /* Coordinate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0EEB4E21FCBE06000E5EF0 /* Coordinate.m */; };
+		9A0EEB5221FCC00A000E5EF0 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0EEB5121FCC00A000E5EF0 /* Vehicle.m */; };
 		9AF4FE6421FB61E4006DDD17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6321FB61E4006DDD17 /* AppDelegate.swift */; };
 		9AF4FE6B21FB61E4006DDD17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6921FB61E4006DDD17 /* Main.storyboard */; };
 		9AF4FE6D21FB61E8006DDD17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6C21FB61E8006DDD17 /* Assets.xcassets */; };
@@ -35,6 +37,10 @@
 		9A0EEB4821FC9850000E5EF0 /* VehicleListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VehicleListViewController.h; sourceTree = "<group>"; };
 		9A0EEB4921FC9850000E5EF0 /* VehicleListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VehicleListViewController.m; sourceTree = "<group>"; };
 		9A0EEB4B21FC9884000E5EF0 /* iOSCodingChallenge-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iOSCodingChallenge-Bridging-Header.h"; sourceTree = "<group>"; };
+		9A0EEB4D21FCBE06000E5EF0 /* Coordinate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
+		9A0EEB4E21FCBE06000E5EF0 /* Coordinate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Coordinate.m; sourceTree = "<group>"; };
+		9A0EEB5021FCC00A000E5EF0 /* Vehicle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Vehicle.h; sourceTree = "<group>"; };
+		9A0EEB5121FCC00A000E5EF0 /* Vehicle.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Vehicle.m; sourceTree = "<group>"; };
 		9AF4FE6021FB61E4006DDD17 /* iOSCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF4FE6321FB61E4006DDD17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AF4FE6A21FB61E4006DDD17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,7 +119,7 @@
 		9AF4FE8921FB651C006DDD17 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				9AF4FE9321FB7651006DDD17 /* VehicleMapViewModel.swift */,
+				9AF4FE9121FB71D5006DDD17 /* NetworkManager.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -130,7 +136,11 @@
 		9AF4FE8B21FB6537006DDD17 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				9AF4FE9121FB71D5006DDD17 /* NetworkManager.swift */,
+				9A0EEB4D21FCBE06000E5EF0 /* Coordinate.h */,
+				9A0EEB4E21FCBE06000E5EF0 /* Coordinate.m */,
+				9AF4FE9321FB7651006DDD17 /* VehicleMapViewModel.swift */,
+				9A0EEB5021FCC00A000E5EF0 /* Vehicle.h */,
+				9A0EEB5121FCC00A000E5EF0 /* Vehicle.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,11 +281,13 @@
 			files = (
 				9AF4FE8621FB6236006DDD17 /* VehicleViewController.swift in Sources */,
 				9AF4FE6421FB61E4006DDD17 /* AppDelegate.swift in Sources */,
+				9A0EEB5221FCC00A000E5EF0 /* Vehicle.m in Sources */,
 				9AF4FE9221FB71D5006DDD17 /* NetworkManager.swift in Sources */,
 				9A0EEB4A21FC9850000E5EF0 /* VehicleListViewController.m in Sources */,
 				9AF4FE8821FB6247006DDD17 /* MapViewController.swift in Sources */,
 				9AF4FE9421FB7651006DDD17 /* VehicleMapViewModel.swift in Sources */,
 				9AF4FE9021FB6AC3006DDD17 /* Constants.swift in Sources */,
+				9A0EEB4F21FCBE06000E5EF0 /* Coordinate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
