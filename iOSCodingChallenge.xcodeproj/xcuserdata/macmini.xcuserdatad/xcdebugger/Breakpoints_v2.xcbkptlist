@@ -74,11 +74,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "iOSCodingChallenge/Controllers/VehicleListViewController.m"
-            timestampString = "570211443.915399"
+            timestampString = "570223519.727566"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-getAllVehicles"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iOSCodingChallenge/Controllers/VehicleListViewController.m"
+            timestampString = "570223519.728376"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "-getAllVehicles"
             landmarkType = "7">
          </BreakpointContent>

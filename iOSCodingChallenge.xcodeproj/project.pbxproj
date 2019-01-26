@@ -138,9 +138,9 @@
 			children = (
 				9A0EEB4D21FCBE06000E5EF0 /* Coordinate.h */,
 				9A0EEB4E21FCBE06000E5EF0 /* Coordinate.m */,
-				9AF4FE9321FB7651006DDD17 /* VehicleMapViewModel.swift */,
 				9A0EEB5021FCC00A000E5EF0 /* Vehicle.h */,
 				9A0EEB5121FCC00A000E5EF0 /* Vehicle.m */,
+				9AF4FE9321FB7651006DDD17 /* VehicleMapViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

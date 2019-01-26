@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (retain) Coordinate *coordinate;
 @property (retain) NSString* fleetType;
 @property (retain) NSString* heading;
-@property (assign) double vehicleId;
+@property (assign) int vehicleId;
 @end
 
 NS_ASSUME_NONNULL_END
