@@ -13,4 +13,13 @@
 @synthesize fleetType;
 @synthesize heading;
 @synthesize vehicleId;
+
+-(id)init{
+    self = [super init];
+    if (self) {
+        coordinate = [[Coordinate alloc] init];
+    }
+    return self;
+}
+
 @end

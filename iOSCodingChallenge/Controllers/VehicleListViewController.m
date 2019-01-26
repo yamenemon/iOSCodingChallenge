@@ -8,10 +8,9 @@
 
 #import "VehicleListViewController.h"
 #import "iOSCodingChallenge-Swift.h"
+#import "VehicleListCell.h"
 
-@interface VehicleListViewController(){
-    NSMutableArray *jsonDataArr;
-}
+@interface VehicleListViewController()
 @property (weak, nonatomic) IBOutlet UITableView *vehicleTableView;
 @property (strong, nonatomic) NSMutableArray *tableData;
 @end
@@ -23,13 +22,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    self.title = @"Vehicle List";
     
     [self getAllVehicles];
-    _tableData = [NSMutableArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
-    
-    
-
 }
 -(void)getAllVehicles{
     NSError *error;
@@ -41,62 +36,54 @@
     
     if(error) { /* JSON was malformed, act appropriately here */ }
     
-    // the originating poster wants to deal with dictionaries;
-    // assuming you do too then something like this is the first
-    // validation step:
     if([json isKindOfClass:[NSDictionary class]])
     {
         NSArray *results = [json valueForKey:@"poiList"];
 //        NSLog(@"%@",results);
-        jsonDataArr = [[NSMutableArray alloc] init];
+        _tableData = [[NSMutableArray alloc] init];
         for (int i = 0; i<results.count; i++) {
             Vehicle *object = [[Vehicle alloc] init];
-//            object.coordinate.latitude = [[ [results objectAtIndex:i] valueForKey:@"coordinate"] valueForKey:@"latitude"];
+            object.coordinate.latitude = [[ [results objectAtIndex:i] valueForKey:@"coordinate"] valueForKey:@"latitude"];
+            object.coordinate.longitude = [[ [results objectAtIndex:i] valueForKey:@"coordinate"] valueForKey:@"longitude"];
             object.fleetType = [ [results objectAtIndex:i] valueForKey:@"fleetType"];
             object.heading = [ [results objectAtIndex:i] valueForKey:@"heading"];
-//            object.vehicleId = (int)[results valueForKey:@"id"];
-            [jsonDataArr addObject:object];
+            object.vehicleId = [[[results objectAtIndex:i] valueForKey:@"id"] integerValue];
+            [_tableData addObject:object];
         }
-        NSLog(@"%@",jsonDataArr);
-        
-        /* proceed with results as you like; the assignment to
-         an explicit NSDictionary * is artificial step to get
-         compile-time checking from here on down (and better autocompletion
-         when editing). You could have just made object an NSDictionary *
-         in the first place but stylistically you might prefer to keep
-         the question of type open until it's confirmed */
-        
     }
     else
     {
-        /* there's no guarantee that the outermost object in a JSON
-         packet will be a dictionary; if we get here then it wasn't,
-         so 'object' shouldn't be treated as an NSDictionary; probably
-         you need to report a suitable error condition */
+
     }
-    
-    
 }
 
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    static NSString *simpleTableIdentifier = @"SimpleTableItem";
+    static NSString *simpleTableIdentifier = @"VehicleListCell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    VehicleListCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"VehicleListCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
     }
     
-    cell.textLabel.text = [jsonDataArr objectAtIndex:indexPath.row];
+    Vehicle *tempVehicle = [_tableData objectAtIndex:indexPath.row];
+    cell.vehicleId.text = [NSString stringWithFormat:@"%d",tempVehicle.vehicleId];
+    cell.fleettype.text = [NSString stringWithFormat:@"%@",tempVehicle.fleetType];
+    cell.heading.text = [NSString stringWithFormat:@"%@",tempVehicle.heading];
+    cell.coordinate.text = [NSString stringWithFormat:@"Lat: %@ Long: %@ ",tempVehicle.coordinate.latitude,tempVehicle.coordinate.longitude];
     return cell;
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [jsonDataArr count];
+    return [_tableData count];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 100;
+}
 
 
 @end
