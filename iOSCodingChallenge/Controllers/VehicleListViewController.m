@@ -43,7 +43,7 @@
     NSString *url_string = [NSString stringWithFormat: @"https://fake-poi-api.mytaxi.com/?p2Lat=53.394655&p1Lon=9.757589&p1Lat=53.694865&p2Lon=10.099891"];
     NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
     id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-//    NSLog(@"json: %@", json);
+    NSLog(@"json: %@", json);
     
     
     if(error) { /* JSON was malformed, act appropriately here */ }
