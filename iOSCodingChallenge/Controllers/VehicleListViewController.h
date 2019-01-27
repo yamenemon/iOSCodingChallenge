@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Vehicle.h"
+@class Singleton;
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -26,7 +26,7 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle ID :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbk-mi-YgS">
-                            <rect key="frame" x="101" y="10" width="78" height="25"/>
+                            <rect key="frame" x="93" y="10" width="78" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="rL9-gb-c7c"/>
                             </constraints>
@@ -35,7 +35,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Fleet Type :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nwl-QX-mW3">
-                            <rect key="frame" x="101" y="38" width="78" height="25"/>
+                            <rect key="frame" x="93" y="38" width="78" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="78" id="O3n-WY-BuO"/>
                             </constraints>
@@ -44,7 +44,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Heading :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BD4-aB-hFA">
-                            <rect key="frame" x="263" y="38" width="65" height="25"/>
+                            <rect key="frame" x="240" y="38" width="65" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="65" id="0WO-b8-uyY"/>
                             </constraints>
@@ -53,19 +53,19 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="56.16080235510343" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8us-7e-d6a">
-                            <rect key="frame" x="331" y="38" width="184" height="25"/>
+                            <rect key="frame" x="308" y="38" width="207" height="25"/>
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat: 53.571531148348896 Lon: 9.935517504395781" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wre-Kr-5P6">
-                            <rect key="frame" x="191" y="67" width="324" height="25"/>
-                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="13"/>
+                            <rect key="frame" x="179" y="67" width="336" height="25"/>
+                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="12"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinate :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQc-xw-OkE">
-                            <rect key="frame" x="101" y="67" width="84" height="25"/>
+                            <rect key="frame" x="93" y="67" width="84" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="84" id="RVZ-bW-m1J"/>
                             </constraints>
@@ -73,14 +73,17 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POOLING" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTB-yM-rx1">
-                            <rect key="frame" x="183" y="38" width="60" height="25"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POOLING" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTB-yM-rx1">
+                            <rect key="frame" x="175" y="38" width="60" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="iTB-yM-rx1" secondAttribute="height" multiplier="12:5" id="pNM-C7-6FK"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wd-M5-JFo">
-                            <rect key="frame" x="182" y="10" width="333" height="25"/>
+                            <rect key="frame" x="174" y="10" width="341" height="25"/>
                             <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -100,8 +103,8 @@
                         <constraint firstItem="lQc-xw-OkE" firstAttribute="leading" secondItem="Nwl-QX-mW3" secondAttribute="leading" id="Gxr-n6-BQC"/>
                         <constraint firstItem="SqI-Fi-fKN" firstAttribute="top" secondItem="Ign-Sc-S6i" secondAttribute="top" constant="10" id="HcO-gS-KyS"/>
                         <constraint firstItem="Wre-Kr-5P6" firstAttribute="height" secondItem="lQc-xw-OkE" secondAttribute="height" id="I35-3y-44X"/>
-                        <constraint firstItem="BD4-aB-hFA" firstAttribute="leading" secondItem="iTB-yM-rx1" secondAttribute="trailing" constant="20" id="I3A-T2-a5Q"/>
-                        <constraint firstItem="Wre-Kr-5P6" firstAttribute="leading" secondItem="lQc-xw-OkE" secondAttribute="trailing" constant="6" id="IFP-Nf-9dM"/>
+                        <constraint firstItem="BD4-aB-hFA" firstAttribute="leading" secondItem="iTB-yM-rx1" secondAttribute="trailing" priority="750" constant="5" id="I3A-T2-a5Q"/>
+                        <constraint firstItem="Wre-Kr-5P6" firstAttribute="leading" secondItem="lQc-xw-OkE" secondAttribute="trailing" constant="2" id="IFP-Nf-9dM"/>
                         <constraint firstItem="lQc-xw-OkE" firstAttribute="bottom" secondItem="Wre-Kr-5P6" secondAttribute="bottom" id="Ird-Mo-puE"/>
                         <constraint firstItem="8us-7e-d6a" firstAttribute="trailing" secondItem="9wd-M5-JFo" secondAttribute="trailing" id="Ivs-cE-7W8"/>
                         <constraint firstItem="9wd-M5-JFo" firstAttribute="bottom" secondItem="Xbk-mi-YgS" secondAttribute="bottom" id="JSO-Jy-gqm"/>
@@ -109,7 +112,7 @@
                         <constraint firstItem="8us-7e-d6a" firstAttribute="top" secondItem="Xbk-mi-YgS" secondAttribute="bottom" constant="3" id="Ndq-Vd-jv1"/>
                         <constraint firstItem="iTB-yM-rx1" firstAttribute="height" secondItem="Nwl-QX-mW3" secondAttribute="height" id="Q1y-08-fv4"/>
                         <constraint firstItem="lQc-xw-OkE" firstAttribute="bottom" secondItem="Ign-Sc-S6i" secondAttribute="bottomMargin" id="Q5W-yb-DCf"/>
-                        <constraint firstItem="Xbk-mi-YgS" firstAttribute="leading" secondItem="SqI-Fi-fKN" secondAttribute="trailing" constant="13" id="SyF-fB-8fX"/>
+                        <constraint firstItem="Xbk-mi-YgS" firstAttribute="leading" secondItem="SqI-Fi-fKN" secondAttribute="trailing" constant="5" id="SyF-fB-8fX"/>
                         <constraint firstItem="iTB-yM-rx1" firstAttribute="top" secondItem="Nwl-QX-mW3" secondAttribute="top" id="TWg-tj-2GT"/>
                         <constraint firstItem="BD4-aB-hFA" firstAttribute="height" secondItem="iTB-yM-rx1" secondAttribute="height" id="TYf-s7-e8F"/>
                         <constraint firstItem="8us-7e-d6a" firstAttribute="height" secondItem="BD4-aB-hFA" secondAttribute="height" id="X7t-Jm-gFr"/>

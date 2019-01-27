@@ -10,6 +10,8 @@
 #import "iOSCodingChallenge-Swift.h"
 #import "VehicleListCell.h"
 #import "MBProgressHUD.h"
+#import "iOSCodingChallenge-Bridging-Header.h"
+
 @interface VehicleListViewController()
 @property (weak, nonatomic) IBOutlet UITableView *vehicleTableView;
 @property (strong, nonatomic) NSMutableArray *tableData;
@@ -23,12 +25,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Vehicle List";
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    UIWindow* window = [UIApplication sharedApplication].keyWindow;
+    if (!window)
+        window = [[UIApplication sharedApplication].windows objectAtIndex:0];
+    [MBProgressHUD showHUDAddedTo:window animated:YES];
     dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         [self getAllVehicles];
-
         dispatch_async(dispatch_get_main_queue(), ^{
-            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [MBProgressHUD hideHUDForView:window  animated:YES];
             [self.vehicleTableView reloadData];
         });
     });
@@ -47,7 +51,6 @@
     if([json isKindOfClass:[NSDictionary class]])
     {
         NSArray *results = [json valueForKey:@"poiList"];
-//        NSLog(@"%@",results);
         _tableData = [[NSMutableArray alloc] init];
         for (int i = 0; i<results.count; i++) {
             Vehicle *object = [[Vehicle alloc] init];
@@ -58,11 +61,14 @@
             object.vehicleId = [[[results objectAtIndex:i] valueForKey:@"id"] integerValue];
             [_tableData addObject:object];
         }
+        
     }
     else
     {
 
     }
+    
+    
 }
 
 
@@ -81,7 +87,7 @@
     cell.vehicleId.text = [NSString stringWithFormat:@"%d",tempVehicle.vehicleId];
     cell.fleettype.text = [NSString stringWithFormat:@"%@",tempVehicle.fleetType];
     cell.heading.text = [NSString stringWithFormat:@"%@",tempVehicle.heading];
-    cell.coordinate.text = [NSString stringWithFormat:@"Lat: %@ Long: %@ ",tempVehicle.coordinate.latitude,tempVehicle.coordinate.longitude];
+    cell.coordinate.text = [NSString stringWithFormat:@"Lat: %@ Lon: %@ ",tempVehicle.coordinate.latitude,tempVehicle.coordinate.longitude];
     return cell;
 }
 

@@ -30,6 +30,9 @@ class MapViewController: UIViewController {
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+            MBProgressHUD.showAdded(to: window, animated: true)
+        }
         centerMap(on: userLocation.coordinate)
     }
     private func centerMap(on coordinate: CLLocationCoordinate2D) {
@@ -79,6 +82,12 @@ extension MapViewController: MKMapViewDelegate {
         } else {
             annotationView = MKAnnotationView(annotation: viewModel,
                                               reuseIdentifier: identifier)
+        }
+        DispatchQueue.main.async {
+            MBProgressHUD.hide(for: UIView(frame:(UIApplication.shared.keyWindow?.window?.bounds)!), animated: true)
+        }
+        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+            MBProgressHUD.hide(for: window, animated: true)
         }
         annotationView.image = UIImage(named: "carImage")!
         annotationView.canShowCallout = true
