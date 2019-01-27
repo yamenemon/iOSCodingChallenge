@@ -9,7 +9,7 @@
 #import "VehicleListViewController.h"
 #import "iOSCodingChallenge-Swift.h"
 #import "VehicleListCell.h"
-
+#import "MBProgressHUD.h"
 @interface VehicleListViewController()
 @property (weak, nonatomic) IBOutlet UITableView *vehicleTableView;
 @property (strong, nonatomic) NSMutableArray *tableData;
@@ -23,8 +23,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.title = @"Vehicle List";
-    
-    [self getAllVehicles];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    dispatch_async(dispatch_get_global_queue( DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
+        [self getAllVehicles];
+
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [MBProgressHUD hideHUDForView:self.view animated:YES];
+            [self.vehicleTableView reloadData];
+        });
+    });
+
 }
 -(void)getAllVehicles{
     NSError *error;
