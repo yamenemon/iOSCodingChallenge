@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import MBProgressHUD
+import Alamofire
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -29,7 +30,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.distanceFilter = 5.0;
-//        locationManager.requestLocation()
         locationManager.startUpdatingLocation()
         if #available(iOS 9.0, *) {
             locationManager.allowsBackgroundLocationUpdates = true
@@ -62,6 +62,15 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             let region = MKCoordinateRegion(center: location.coordinate, span: span)
             mapView.setRegion(region, animated: true)
         }
+        
+        let geocoder = CLGeocoder()
+        geocoder.reverseGeocodeLocation(locationManager.location!) { (placemarksArray, error) in
+        
+            if (placemarksArray?.count)! > 0 {
+                let placemark = placemarksArray?.first
+                print(placemark?.locality ?? "Humberg")
+            }
+        }
     }
 }
 
@@ -71,11 +80,31 @@ extension MapViewController: MKMapViewDelegate {
         if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
             MBProgressHUD.showAdded(to: window, animated: true)
         }
+//        getUserCurrentCity()
         displayingVehicleInMap()
 
     }
     
-
+    func getUserCurrentCity() {
+        
+        let _: String = "your_server_url"
+        
+//        Alamofire.request(todosEndpoint, method: .get, encoding: JSONEncoding.default)
+//            .responseJSON { response in
+//                debugPrint(response)
+//
+//                if let data = response.result.value{
+//                    // Response type-1
+//                    if  (data as? [[String : AnyObject]]) != nil{
+//                        print("data_1: \(data)")
+//                    }
+//                    // Response type-2
+//                    if  (data as? [String : AnyObject]) != nil{
+//                        print("data_2: \(data)")
+//                    }
+//                }
+//        }
+    }
     private func centerMap(on coordinate: CLLocationCoordinate2D) {
         let regionRadius: CLLocationDistance = 3000
         let coordinateRegion = MKCoordinateRegion(center: coordinate,

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A8DF7F1FD049629377FF424FCF5CA6CF"
-               BuildableName = "Pods_iOSCodingChallenge.framework"
-               BlueprintName = "Pods-iOSCodingChallenge"
+               BlueprintIdentifier = "D114E0DD9FAF4C2E30A6306268FD1F67"
+               BuildableName = "Alamofire.framework"
+               BlueprintName = "Alamofire"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A8DF7F1FD049629377FF424FCF5CA6CF"
-            BuildableName = "Pods_iOSCodingChallenge.framework"
-            BlueprintName = "Pods-iOSCodingChallenge"
+            BlueprintIdentifier = "D114E0DD9FAF4C2E30A6306268FD1F67"
+            BuildableName = "Alamofire.framework"
+            BlueprintName = "Alamofire"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

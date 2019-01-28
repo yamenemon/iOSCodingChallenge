@@ -7,6 +7,8 @@ target 'iOSCodingChallenge' do
 
   # Pods for iOSCodingChallenge
      pod 'MBProgressHUD', '~> 1.1.0'
+     pod 'Alamofire', '~> 5.0.0.beta.1'
+
   target 'iOSCodingChallengeTests' do
     inherit! :search_paths
     # Pods for testing
