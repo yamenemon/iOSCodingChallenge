@@ -36,7 +36,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestAlwaysAuthorization()
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.distanceFilter = 5.0;
-        locationManager.startUpdatingLocation()
+//        locationManager.startUpdatingLocation()
         if #available(iOS 9.0, *) {
             locationManager.allowsBackgroundLocationUpdates = true
         } else {
@@ -60,22 +60,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.delegate = self
         locationManager.startMonitoringSignificantLocationChanges()
     }
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
-//        let geocoder = CLGeocoder()
-//        geocoder.reverseGeocodeLocation(locationManager.location!) { (placemarksArray, error) in
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 //
-//            if (placemarksArray?.count)! > 0 {
-//                let placemark = placemarksArray?.first
-//                print(placemark?.locality ?? "Humberg")
-//            }
-//        }
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-        geofenceRegionCenter = locValue
-        geofenceRegionCenter?.latitude = (locationManager.location!.coordinate.latitude)
-        geofenceRegionCenter?.longitude = (locationManager.location!.coordinate.longitude)
-        print(geofenceRegionCenter!)
-    }
+////        let geocoder = CLGeocoder()
+////        geocoder.reverseGeocodeLocation(locationManager.location!) { (placemarksArray, error) in
+////
+////            if (placemarksArray?.count)! > 0 {
+////                let placemark = placemarksArray?.first
+////                print(placemark?.locality ?? "Humberg")
+////            }
+////        }
+//        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+//        geofenceRegionCenter = locValue
+//        geofenceRegionCenter?.latitude = (locationManager.location!.coordinate.latitude)
+//        geofenceRegionCenter?.longitude = (locationManager.location!.coordinate.longitude)
+//        print(geofenceRegionCenter!)
+//    }
 }
 
 extension MapViewController: MKMapViewDelegate {
@@ -84,8 +84,9 @@ extension MapViewController: MKMapViewDelegate {
 //        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
 //            MBProgressHUD.showAdded(to: window, animated: true)
 //        }
+        print("calling")
         DispatchQueue.main.async {
-            
+            guard let _: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { return }
             self.centerMap(on: (self.locationManager.location?.coordinate)!)
             
             let northEast = mapView.convert(CGPoint(x: mapView.bounds.width, y: 0), toCoordinateFrom: mapView)
@@ -115,8 +116,10 @@ extension MapViewController: MKMapViewDelegate {
                     if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
                         
                         // Print out dictionary
-                        print(convertedJsonIntoDict)
-                        self.centerMap(on: self.geofenceRegionCenter!)
+//                        print(convertedJsonIntoDict)
+                        guard let locValue: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { return }
+                        self.geofenceRegionCenter = locValue
+                        self.centerMap(on: self.geofenceRegionCenter)
                         
                         
                         let results = convertedJsonIntoDict["poiList"] as! [NSDictionary]
@@ -128,7 +131,6 @@ extension MapViewController: MKMapViewDelegate {
                             vehicle.coordinate.longitude = dic["longitude"] as! Double
                             self.tableData.append(vehicle)
                         }
-                        print(self.tableData)
                     }
                 } catch let error as NSError {
                     print(error.localizedDescription)
@@ -164,7 +166,7 @@ extension MapViewController: MKMapViewDelegate {
         if self.tableData != nil {
             var coords = NSMutableArray.init() as! [CLLocation]
             for object:Vehicle in self.tableData {
-                print("\(object.coordinate.latitude) \(object.coordinate.longitude) ")
+//                print("\(object.coordinate.latitude) \(object.coordinate.longitude) ")
                 let lat: Double = Double("\(object.coordinate.latitude)")!
                 let lon: Double = Double("\(object.coordinate.longitude)")!
                 coords.append(CLLocation(latitude: lat, longitude:lon))
@@ -174,8 +176,8 @@ extension MapViewController: MKMapViewDelegate {
         
     }
     func addAnnotations(coords: [CLLocation]){
-        let serialQueue = DispatchQueue(label: "com.test.mySerialQueue")
-        serialQueue.sync {
+        DispatchQueue.main.async {
+
             for coord in coords{
                 let CLLCoordType = CLLocationCoordinate2D(latitude: coord.coordinate.latitude,
                                                           longitude: coord.coordinate.longitude);
@@ -197,7 +199,7 @@ extension MapViewController: MKMapViewDelegate {
 //            if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
 //                MBProgressHUD.hide(for: window, animated: true)
 //            }
-//            mapView.removeAnnotation(annotation)
+            self.locationManager.stopUpdatingLocation()
             let pinIdent = "Pin";
             var pinView: MKPinAnnotationView;
             if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: pinIdent) as? MKPinAnnotationView {
