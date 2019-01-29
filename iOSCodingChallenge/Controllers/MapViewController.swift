@@ -11,10 +11,13 @@ import MapKit
 import MBProgressHUD
 import Alamofire
 
+
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     private var cars: [VehicleMapViewModel] = [] 
     private let locationManager = CLLocationManager()
+    private var geofenceRegionCenter: CLLocationCoordinate2D!
+    private var tableData: Array<Vehicle>!
     @IBOutlet weak var mapView: MKMapView! {
         didSet {
             mapView.showsUserLocation = true
@@ -23,6 +26,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        let merc = SphericalMercator()
+        
         locationManager.requestWhenInUseAuthorization()
         // Do any additional setup after loading the view.
         locationManager.stopUpdatingLocation()
@@ -37,10 +43,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             // Fallback on earlier versions
         }
         locationManager.pausesLocationUpdatesAutomatically = false
-        displayingVehicleInMap()
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        locationManager.startUpdatingLocation()
+        
+
     }
     func startReceivingSignificantLocationChanges() {
         let authorizationStatus = CLLocationManager.authorizationStatus()
@@ -57,60 +61,96 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startMonitoringSignificantLocationChanges()
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        if let location = locations.first {
-            let span = MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
-            let region = MKCoordinateRegion(center: location.coordinate, span: span)
-            mapView.setRegion(region, animated: true)
-        }
-        
-        let geocoder = CLGeocoder()
-        geocoder.reverseGeocodeLocation(locationManager.location!) { (placemarksArray, error) in
-        
-            if (placemarksArray?.count)! > 0 {
-                let placemark = placemarksArray?.first
-                print(placemark?.locality ?? "Humberg")
-            }
-        }
+
+//        let geocoder = CLGeocoder()
+//        geocoder.reverseGeocodeLocation(locationManager.location!) { (placemarksArray, error) in
+//
+//            if (placemarksArray?.count)! > 0 {
+//                let placemark = placemarksArray?.first
+//                print(placemark?.locality ?? "Humberg")
+//            }
+//        }
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        geofenceRegionCenter = locValue
+        geofenceRegionCenter?.latitude = (locationManager.location!.coordinate.latitude)
+        geofenceRegionCenter?.longitude = (locationManager.location!.coordinate.longitude)
+        print(geofenceRegionCenter!)
     }
 }
 
 extension MapViewController: MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
-            MBProgressHUD.showAdded(to: window, animated: true)
+//        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+//            MBProgressHUD.showAdded(to: window, animated: true)
+//        }
+        DispatchQueue.main.async {
+            
+            self.centerMap(on: (self.locationManager.location?.coordinate)!)
+            
+            let northEast = mapView.convert(CGPoint(x: mapView.bounds.width, y: 0), toCoordinateFrom: mapView)
+            let southWest = mapView.convert(CGPoint(x: 0, y: mapView.bounds.height), toCoordinateFrom: mapView)
+            
+            print("Northest : \(northEast) and Southwest: \(southWest)")
+            
+            let url_string = "https://fake-poi-api.mytaxi.com/?p2Lat=\(northEast.latitude)&p1Lon=\(northEast.longitude)&p1Lat=\(southWest.latitude)&p2Lon=\(southWest.longitude)"
+            
+            let myUrl = NSURL(string: url_string)
+            let request = NSMutableURLRequest(url: myUrl! as URL)
+            request.httpMethod = "GET"
+            
+            // Excute HTTP Request
+            let task = URLSession.shared.dataTask(with: request as URLRequest) {
+                data, response, error in
+                
+                // Check for error
+                if error != nil
+                {
+                    print("error=\(String(describing: error))")
+                    return
+                }
+                
+                // Convert server json response to NSDictionary
+                do {
+                    if let convertedJsonIntoDict = try JSONSerialization.jsonObject(with: data!, options: []) as? NSDictionary {
+                        
+                        // Print out dictionary
+                        print(convertedJsonIntoDict)
+                        self.centerMap(on: self.geofenceRegionCenter!)
+                        
+                        
+                        let results = convertedJsonIntoDict["poiList"] as! [NSDictionary]
+                        self.tableData = [Vehicle]()
+                        for object in results{
+                            let vehicle = Vehicle()
+                            let dic = object["coordinate"] as! NSDictionary
+                            vehicle.coordinate.latitude =  dic["latitude"] as! Double
+                            vehicle.coordinate.longitude = dic["longitude"] as! Double
+                            self.tableData.append(vehicle)
+                        }
+                        print(self.tableData)
+                    }
+                } catch let error as NSError {
+                    print(error.localizedDescription)
+                }
+            }
+            task.resume()
         }
-//        getUserCurrentCity()
-        displayingVehicleInMap()
-
+        locationManager.stopUpdatingLocation()
     }
     
-    func getUserCurrentCity() {
-        
-        let _: String = "your_server_url"
-        
-//        Alamofire.request(todosEndpoint, method: .get, encoding: JSONEncoding.default)
-//            .responseJSON { response in
-//                debugPrint(response)
-//
-//                if let data = response.result.value{
-//                    // Response type-1
-//                    if  (data as? [[String : AnyObject]]) != nil{
-//                        print("data_1: \(data)")
-//                    }
-//                    // Response type-2
-//                    if  (data as? [String : AnyObject]) != nil{
-//                        print("data_2: \(data)")
-//                    }
-//                }
-//        }
-    }
+
     private func centerMap(on coordinate: CLLocationCoordinate2D) {
-        let regionRadius: CLLocationDistance = 3000
-        let coordinateRegion = MKCoordinateRegion(center: coordinate,
-                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
-        mapView.setRegion(coordinateRegion, animated: true)
-        displayingVehicleInMap()
+//        let regionRadius: CLLocationDistance = 5000
+//        let coordinateRegion = MKCoordinateRegion(center: coordinate,
+//                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+//        mapView.setRegion(coordinateRegion, animated: true)
+        
+        let serialQueue = DispatchQueue(label: "com.test.mySerialQueue")
+        serialQueue.sync {
+            // code
+            displayingVehicleInMap()
+        }
     }
     
     private func displayingVehicleInMap(){
@@ -118,37 +158,46 @@ extension MapViewController: MKMapViewDelegate {
 //        guard coordinate.latitude != 0 && coordinate.longitude != 0 else {
 //            return
 //        }
-        
-        let coords = [  CLLocation(latitude: 53.44176110543172, longitude: 9.780926262977344),
-                        CLLocation(latitude: 53.44176110543172, longitude: 9.863625795728705),
-                        CLLocation(latitude: 53.45114443968461, longitude:10.01379149784659),
-                        CLLocation(latitude: 53.54326771329314, longitude:9.802020967514203),
-                        CLLocation(latitude: 53.58529295190684, longitude:9.802418494033601)
-        ];
-        addAnnotations(coords: coords)
+//        if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+//            MBProgressHUD.hide(for: window, animated: true)
+//        }
+        if self.tableData != nil {
+            var coords = NSMutableArray.init() as! [CLLocation]
+            for object:Vehicle in self.tableData {
+                print("\(object.coordinate.latitude) \(object.coordinate.longitude) ")
+                let lat: Double = Double("\(object.coordinate.latitude)")!
+                let lon: Double = Double("\(object.coordinate.longitude)")!
+                coords.append(CLLocation(latitude: lat, longitude:lon))
+            }
+            addAnnotations(coords: coords)
+        }
         
     }
     func addAnnotations(coords: [CLLocation]){
-        for coord in coords{
-            let CLLCoordType = CLLocationCoordinate2D(latitude: coord.coordinate.latitude,
-                                                      longitude: coord.coordinate.longitude);
-            let anno = MKPointAnnotation()
+        let serialQueue = DispatchQueue(label: "com.test.mySerialQueue")
+        serialQueue.sync {
+            for coord in coords{
+                let CLLCoordType = CLLocationCoordinate2D(latitude: coord.coordinate.latitude,
+                                                          longitude: coord.coordinate.longitude);
+                let anno = MKPointAnnotation()
+                
+                anno.coordinate = CLLCoordType
+                anno.title = "Test annotation"
+                self.mapView.addAnnotation(anno)
+            }
+            self.mapView.showAnnotations(self.mapView.annotations, animated: true)
             
-            anno.coordinate = CLLCoordType
-            anno.title = "Test annotation"
-            self.mapView.addAnnotation(anno)
         }
-        self.mapView.showAnnotations(self.mapView.annotations, animated: true)
-        
     }
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation{
             return nil;
         }else{
-            if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
-                MBProgressHUD.hide(for: window, animated: true)
-            }
+//            if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+//                MBProgressHUD.hide(for: window, animated: true)
+//            }
+//            mapView.removeAnnotation(annotation)
             let pinIdent = "Pin";
             var pinView: MKPinAnnotationView;
             if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: pinIdent) as? MKPinAnnotationView {
@@ -158,6 +207,8 @@ extension MapViewController: MKMapViewDelegate {
                 pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdent);
                 
             }
+            pinView.image = UIImage(named:"carImage")
+
             return pinView;
         }
     }

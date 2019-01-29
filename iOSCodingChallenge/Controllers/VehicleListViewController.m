@@ -54,8 +54,8 @@
         _tableData = [[NSMutableArray alloc] init];
         for (int i = 0; i<results.count; i++) {
             Vehicle *object = [[Vehicle alloc] init];
-            object.coordinate.latitude = [[ [results objectAtIndex:i] valueForKey:@"coordinate"] valueForKey:@"latitude"];
-            object.coordinate.longitude = [[ [results objectAtIndex:i] valueForKey:@"coordinate"] valueForKey:@"longitude"];
+            object.coordinate.latitude = [[[ [results objectAtIndex:i] valueForKey:@"coordinate"] valueForKey:@"latitude"] doubleValue];
+            object.coordinate.longitude = [[[ [results objectAtIndex:i] valueForKey:@"coordinate"] valueForKey:@"longitude"] doubleValue];
             object.fleetType = [ [results objectAtIndex:i] valueForKey:@"fleetType"];
             object.heading = [ [results objectAtIndex:i] valueForKey:@"heading"];
             object.vehicleId = [[[results objectAtIndex:i] valueForKey:@"id"] integerValue];
@@ -87,7 +87,7 @@
     cell.vehicleId.text = [NSString stringWithFormat:@"%d",tempVehicle.vehicleId];
     cell.fleettype.text = [NSString stringWithFormat:@"%@",tempVehicle.fleetType];
     cell.heading.text = [NSString stringWithFormat:@"%@",tempVehicle.heading];
-    cell.coordinate.text = [NSString stringWithFormat:@"Lat: %@ Lon: %@ ",tempVehicle.coordinate.latitude,tempVehicle.coordinate.longitude];
+    cell.coordinate.text = [NSString stringWithFormat:@"Lat: %f Lon: %f ",tempVehicle.coordinate.latitude,tempVehicle.coordinate.longitude];
     return cell;
 }
 

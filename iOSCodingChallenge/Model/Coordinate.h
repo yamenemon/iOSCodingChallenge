@@ -11,8 +11,8 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface Coordinate : NSObject
-@property (retain) NSString *latitude;
-@property (retain) NSString *longitude;
+@property (assign) double latitude;
+@property (assign) double longitude;
 @end
 
 NS_ASSUME_NONNULL_END
