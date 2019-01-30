@@ -10,6 +10,8 @@
 #import "Vehicle.h"
 @class Singleton;
 @class Constants;
+@class MapViewModel;
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VehicleListViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>

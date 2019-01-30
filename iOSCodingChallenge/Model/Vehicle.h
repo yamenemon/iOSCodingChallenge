@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Vehicle : NSObject
 @property (retain) Coordinate *coordinate;
 @property (retain) NSString* fleetType;
-@property (retain) NSString* heading;
-@property (assign) UInt16 vehicleId;
+@property (assign) double heading;
+@property (assign) double vehicleId;
 @end
 
 NS_ASSUME_NONNULL_END
