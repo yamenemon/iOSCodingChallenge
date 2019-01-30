@@ -8,4 +8,11 @@
 
 import Foundation
 
-public let BASE_URL = "https://fake-poi-api.mytaxi.com/?p2Lat=53.394655&p1Lon=9.757589&p1Lat=53.694865&p2Lon=10.099891"
+@objc class Constants: NSObject {
+    
+    @objc public static var base_url = "https://fake-poi-api.mytaxi.com/"
+    private override init() {
+        //This prevents others from using the default '()' initializer for this class.
+    }
+    
+}

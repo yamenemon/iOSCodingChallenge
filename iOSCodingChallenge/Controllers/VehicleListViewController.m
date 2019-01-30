@@ -7,10 +7,9 @@
 //
 
 #import "VehicleListViewController.h"
-#import "iOSCodingChallenge-Swift.h"
+#import <iOSCodingChallenge-Swift.h>
 #import "VehicleListCell.h"
 #import "MBProgressHUD.h"
-#import "iOSCodingChallenge-Bridging-Header.h"
 
 @interface VehicleListViewController()
 @property (weak, nonatomic) IBOutlet UITableView *vehicleTableView;
@@ -39,8 +38,9 @@
 
 }
 -(void)getAllVehicles{
+        
     NSError *error;
-    NSString *url_string = [NSString stringWithFormat: @"https://fake-poi-api.mytaxi.com/?p2Lat=53.394655&p1Lon=9.757589&p1Lat=53.694865&p2Lon=10.099891"];
+    NSString *url_string = [NSString stringWithFormat: @"%@?p2Lat=53.394655&p1Lon=9.757589&p1Lat=53.694865&p2Lon=10.099891",Constants.base_url];
     NSData *data = [NSData dataWithContentsOfURL: [NSURL URLWithString:url_string]];
     id json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     NSLog(@"json: %@", json);

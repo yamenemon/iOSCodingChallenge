@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Vehicle.h"
 @class Singleton;
-
+@class Constants;
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VehicleListViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>

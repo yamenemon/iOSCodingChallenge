@@ -17,7 +17,7 @@ import Foundation
         //This prevents others from using the default '()' initializer for this class.
     }
     
-    class func sharedInstance() -> Singleton {
+    public class func sharedInstance() -> Singleton {
         return Singleton._singletonInstance
     }
 
