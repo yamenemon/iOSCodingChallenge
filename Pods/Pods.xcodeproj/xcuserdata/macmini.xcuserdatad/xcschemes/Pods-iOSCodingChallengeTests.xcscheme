@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1010"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A8DF7F1FD049629377FF424FCF5CA6CF"
-               BuildableName = "Pods_iOSCodingChallenge.framework"
-               BlueprintName = "Pods-iOSCodingChallenge"
+               BlueprintIdentifier = "692CC1C2E91F0B5C00B11B8869FBBDAA"
+               BuildableName = "Pods_iOSCodingChallengeTests.framework"
+               BlueprintName = "Pods-iOSCodingChallengeTests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A8DF7F1FD049629377FF424FCF5CA6CF"
-            BuildableName = "Pods_iOSCodingChallenge.framework"
-            BlueprintName = "Pods-iOSCodingChallenge"
+            BlueprintIdentifier = "692CC1C2E91F0B5C00B11B8869FBBDAA"
+            BuildableName = "Pods_iOSCodingChallengeTests.framework"
+            BlueprintName = "Pods-iOSCodingChallengeTests"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 import MBProgressHUD
-import Alamofire
 import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
