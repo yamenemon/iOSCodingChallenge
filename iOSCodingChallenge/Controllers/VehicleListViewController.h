@@ -8,9 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Vehicle.h"
-@class Singleton;
 @class Constants;
 @class MapViewModel;
+@class Extension;
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -28,6 +28,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = Constants.MAP_VIEW_TITLE;
+
         determineCurrentLocation()
     }
     

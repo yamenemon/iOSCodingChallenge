@@ -17,8 +17,17 @@ import Foundation
         //This prevents others from using the default '()' initializer for this class.
     }
     
-    public class func sharedInstance() -> Singleton {
+    @objc public class func sharedInstance() -> Singleton {
         return Singleton._singletonInstance
     }
+    @objc public func showAlert(controllerTitle:String, alertCancelTitle:String, alertMessage:String) -> Void {
+        
+        let alert = UIAlertController(title: controllerTitle, message: alertMessage, preferredStyle: .alert)
+        let action = UIAlertAction(title: alertCancelTitle, style: .cancel, handler: nil)
+        
+        alert.addAction(action)
+        
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: true, completion: nil)
 
+    }
 }

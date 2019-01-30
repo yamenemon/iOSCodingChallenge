@@ -34,8 +34,8 @@
         window = [[UIApplication sharedApplication].windows objectAtIndex:0];
     [MBProgressHUD showHUDAddedTo:window animated:YES];
 
-    MapViewModel *class = [[MapViewModel alloc] init];
-    [class loadVehicleWhileUserChangePositionWithNorthEast:CLLocationCoordinate2DMake(Constants.LAT1, Constants.LON1) southWest:CLLocationCoordinate2DMake(Constants.LAT2, Constants.LON2) onSuccess:^(id dataArr) {
+    MapViewModel *mappingCLass = [[MapViewModel alloc] init];
+    [mappingCLass loadVehicleWhileUserChangePositionWithNorthEast:CLLocationCoordinate2DMake(Constants.LAT1, Constants.LON1) southWest:CLLocationCoordinate2DMake(Constants.LAT2, Constants.LON2) onSuccess:^(id dataArr) {
         self.tableData = dataArr;
         dispatch_async(dispatch_get_main_queue(), ^{
             [MBProgressHUD hideHUDForView:window  animated:YES];
@@ -44,6 +44,8 @@
     } onFailure:^(NSError * err) {
         if (err) {
             NSLog(@"Error occured");
+            Singleton *global = [Singleton sharedInstance];
+            [global showAlertWithControllerTitle:Constants.ALERT_SERVER_ERROR alertCancelTitle:Constants.ALERT_SERVER_OK alertMessage:Constants.ALERT_SERVER_MESSAGE];
         }
     }];
 }
@@ -60,7 +62,7 @@
     }
     
     Vehicle *tempVehicle = [_tableData objectAtIndex:indexPath.row];
-    cell.vehicleId.text = [NSString stringWithFormat:@"%f",tempVehicle.vehicleId];
+    cell.vehicleId.text = [NSString stringWithFormat:@"%.00f",tempVehicle.vehicleId];
     cell.fleettype.text = [NSString stringWithFormat:@"%@",tempVehicle.fleetType];
     cell.heading.text = [NSString stringWithFormat:@"%f",tempVehicle.heading];
     cell.coordinate.text = [NSString stringWithFormat:@"Lat: %f %@  Lon: %f %@  ",tempVehicle.coordinate.latitude,Constants.DEGREE_SIGN,tempVehicle.coordinate.longitude,Constants.DEGREE_SIGN];
@@ -72,7 +74,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 100;
+    return Constants.TABLEVIEW_CELL_HEIGHT;
 }
 
 
