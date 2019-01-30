@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../../../Documents/MapViewModel.swift"
-            timestampString = "570530923.178781"
+            filePath = "iOSCodingChallenge/Controllers/MapViewController.swift"
+            timestampString = "570535334.537261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "loadVehicleWhileUserChangePosition(northEast:southWest:onSuccess:onFailure:)"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
+            landmarkName = "mapView(_:viewFor:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

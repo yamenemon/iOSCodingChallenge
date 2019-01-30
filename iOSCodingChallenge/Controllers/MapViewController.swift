@@ -50,7 +50,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     {
         // 2. setup locationManager
         locationManager.delegate = self;
-        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+//        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+        locationManager.distanceFilter = 100.0;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.requestAlwaysAuthorization()
         
@@ -96,9 +97,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let distanceInMeters = coordinate0!.distance(from: coordinate1)
         print(distanceInMeters)
 
-        if distanceInMeters > 10 {
-            let regionRadius = distanceInMeters
-            let regions = CLCircularRegion(center: center, radius: regionRadius, identifier: "Your Location")
+//        if distanceInMeters > 5 {
+//            let regionRadius = distanceInMeters
+        let regions = CLCircularRegion(center: center, radius: CLLocationDistance(mapView.bounds.width), identifier: "Your Location")
             locationManager.startMonitoring(for: regions)
             
             let mapViewModel = MapViewModel()
@@ -112,11 +113,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
             mapViewModel.loadVehicleWhileUserChangePosition(northEast: northEast, southWest: southWest
                 , onSuccess: { (data) in
                     self.tableData = (data as! Array<Vehicle>)
-                    self.displayingVehicleInMap()
+                    DispatchQueue.main.sync {
+                        self.displayingVehicleInMap()
+                    }
             }) { (err) in
                 print("URL is not responding \(String(describing: err))")
             }
-        }
+//        }
     }
     
     func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
@@ -168,7 +171,8 @@ extension MapViewController: MKMapViewDelegate {
     }
     func addAnnotations(coords: [CLLocation]){
         DispatchQueue.main.async {
-
+            let allAnnotations = self.mapView.annotations
+            self.mapView.removeAnnotations(allAnnotations)
             for coord in coords{
                 let CLLCoordType = CLLocationCoordinate2D(latitude: coord.coordinate.latitude,
                                                           longitude: coord.coordinate.longitude);
@@ -190,7 +194,6 @@ extension MapViewController: MKMapViewDelegate {
 //            if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
 //                MBProgressHUD.hide(for: window, animated: true)
 //            }
-            self.locationManager.stopUpdatingLocation()
             let pinIdent = "Pin";
             var pinView: MKPinAnnotationView;
             if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: pinIdent) as? MKPinAnnotationView {
