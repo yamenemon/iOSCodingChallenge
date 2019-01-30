@@ -98,8 +98,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let distanceInMeters = coordinate0!.distance(from: coordinate1)
         print(distanceInMeters)
 
-//        if distanceInMeters > 5 {
-//            let regionRadius = distanceInMeters
         let regions = CLCircularRegion(center: center, radius: CLLocationDistance(mapView.bounds.width), identifier: "Your Location")
             locationManager.startMonitoring(for: regions)
             
@@ -202,10 +200,7 @@ extension MapViewController: MKMapViewDelegate {
                 pinView = dequeuedView;
             }else{
                 pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdent);
-                
             }
-            pinView.image = UIImage(named:"carImage")
-
             return pinView;
         }
     }
