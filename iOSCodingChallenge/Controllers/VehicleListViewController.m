@@ -72,10 +72,7 @@
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [_tableData count];
 }
-
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return Constants.TABLEVIEW_CELL_HEIGHT;
 }
-
-
 @end

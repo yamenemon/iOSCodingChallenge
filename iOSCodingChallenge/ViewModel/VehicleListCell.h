@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 NS_ASSUME_NONNULL_BEGIN
 
 @interface VehicleListCell : UITableViewCell
@@ -15,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *fleettype;
 @property (weak, nonatomic) IBOutlet UILabel *heading;
 @property (weak, nonatomic) IBOutlet UILabel *coordinate;
+@property (weak, nonatomic) IBOutlet UIImageView *cellImage;
 
 @end
 
