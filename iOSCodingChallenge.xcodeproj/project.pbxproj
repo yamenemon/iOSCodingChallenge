@@ -16,6 +16,7 @@
 		9A0EEB5621FCF194000E5EF0 /* VehicleListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A0EEB5521FCF194000E5EF0 /* VehicleListCell.xib */; };
 		9A0EEB5921FCF20A000E5EF0 /* VehicleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0EEB5821FCF20A000E5EF0 /* VehicleListCell.m */; };
 		9A0EEB5C21FD0BF5000E5EF0 /* VehicleViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0EEB5B21FD0BF5000E5EF0 /* VehicleViewModel.m */; };
+		9A78AB1822018A6E006E4719 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78AB1722018A6E006E4719 /* MapViewModel.swift */; };
 		9AF4FE6421FB61E4006DDD17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6321FB61E4006DDD17 /* AppDelegate.swift */; };
 		9AF4FE6B21FB61E4006DDD17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6921FB61E4006DDD17 /* Main.storyboard */; };
 		9AF4FE6D21FB61E8006DDD17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6C21FB61E8006DDD17 /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		9A0EEB5821FCF20A000E5EF0 /* VehicleListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VehicleListCell.m; sourceTree = "<group>"; };
 		9A0EEB5A21FD0BF5000E5EF0 /* VehicleViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VehicleViewModel.h; sourceTree = "<group>"; };
 		9A0EEB5B21FD0BF5000E5EF0 /* VehicleViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VehicleViewModel.m; sourceTree = "<group>"; };
+		9A78AB1722018A6E006E4719 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = ../../../../../Documents/MapViewModel.swift; sourceTree = "<group>"; };
 		9AF4FE6021FB61E4006DDD17 /* iOSCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF4FE6321FB61E4006DDD17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AF4FE6A21FB61E4006DDD17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				9A0EEB5821FCF20A000E5EF0 /* VehicleListCell.m */,
 				9A0EEB5A21FD0BF5000E5EF0 /* VehicleViewModel.h */,
 				9A0EEB5B21FD0BF5000E5EF0 /* VehicleViewModel.m */,
+				9A78AB1722018A6E006E4719 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				9A0EEB5C21FD0BF5000E5EF0 /* VehicleViewModel.m in Sources */,
 				9AF4FE8821FB6247006DDD17 /* MapViewController.swift in Sources */,
 				9AF4FE9421FB7651006DDD17 /* VehicleMapViewModel.swift in Sources */,
+				9A78AB1822018A6E006E4719 /* MapViewModel.swift in Sources */,
 				9AF4FE9021FB6AC3006DDD17 /* Constants.swift in Sources */,
 				9A0EEB4F21FCBE06000E5EF0 /* Coordinate.m in Sources */,
 			);
