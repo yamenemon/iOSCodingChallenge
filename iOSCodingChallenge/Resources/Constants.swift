@@ -11,7 +11,7 @@ import Foundation
 @objc class Constants: NSObject {
     
     @objc public static var base_url = "https://fake-poi-api.mytaxi.com/"
-    @objc public static var VEHICAL_LIST_TITLE = "Nearby Vehicles"
+    @objc public static var VEHICAL_LIST_TITLE = "Vehicles"
     @objc public static var LAT1 = 53.394655
     @objc public static var LON1 = 9.757589
     @objc public static var LAT2 = 53.694865
