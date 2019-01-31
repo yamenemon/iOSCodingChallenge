@@ -80,13 +80,13 @@
     return Constants.TABLEVIEW_CELL_HEIGHT;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 40;
+    return Constants.TABLEVIEW_HEADER_HEIGHT;
 }
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     Singleton *global = [Singleton sharedInstance];
-    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width,40)];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width,Constants.TABLEVIEW_HEADER_HEIGHT)];
     headerView.backgroundColor = [global hexStringToUIColorWithHex:@"0facd3b"];
-    UILabel *headerTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, tableView.frame.size.width - 10, 40)];
+    UILabel *headerTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, tableView.frame.size.width - 10, Constants.TABLEVIEW_HEADER_HEIGHT)];
     headerTextLabel.backgroundColor = [global hexStringToUIColorWithHex:@"0facd3b"];
     headerTextLabel.textColor = [UIColor whiteColor];
     headerTextLabel.font = [UIFont boldSystemFontOfSize:18];

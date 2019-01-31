@@ -19,6 +19,8 @@ import Foundation
     @objc public static var TABLE_CELL_IDENTIFIER = "VehicleListCell"
     @objc public static var DEGREE_SIGN = "\u{00B0}"
     @objc public static var TABLEVIEW_CELL_HEIGHT = 100
+    //heightForHeaderInSection
+    @objc public static var TABLEVIEW_HEADER_HEIGHT = 40
     
     //MAP VIEW
     @objc public static var MAP_VIEW_TITLE = "Map"
@@ -27,6 +29,10 @@ import Foundation
     @objc public static var ALERT_SERVER_ERROR = "Server Error!"
     @objc public static var ALERT_SERVER_MESSAGE = "Maintanence Time.Please try again after some moments"
     @objc public static var ALERT_SERVER_OK = "OK"
+    
+    //Alert controller message at mapview
+    @objc public static var ALERT_AUTH_MESSAGE = "Location services were previously denied. Please enable location services for this app in Settings."
+    @objc public static var ALERT_AUTH_ERROR =  "Authentication Error!"
     private override init() {
         //This prevents others from using the default '()' initializer for this class.
     }

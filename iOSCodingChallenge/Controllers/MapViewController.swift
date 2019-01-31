@@ -39,7 +39,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         }
             // 2. authorization were denied
         else if CLLocationManager.authorizationStatus() == .denied {
-            print("Location services were previously denied. Please enable location services for this app in Settings.")
+            let global = Singleton.sharedInstance()
+            global.showAlert(controllerTitle:Constants.ALERT_AUTH_ERROR, alertCancelTitle:Constants.ALERT_SERVER_OK, alertMessage:Constants.ALERT_AUTH_MESSAGE)
         }
             // 3. we do have authorization
         else if CLLocationManager.authorizationStatus() == .authorizedAlways {
@@ -92,12 +93,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         if currentPosition == nil {
             currentPosition = userLocation
         }
-        let coordinate0 = currentPosition
-        let coordinate1 = userLocation
-        let distanceInMeters = coordinate0!.distance(from: coordinate1)
-        print(distanceInMeters)
         
-        let regions = CLCircularRegion(center: center, radius: CLLocationDistance(mapView.bounds.width), identifier: "Your Location")
+        let regions = CLCircularRegion(center: center, radius: CLLocationDistance(mapView.bounds.width), identifier: "User Location bounds")
         locationManager.startMonitoring(for: regions)
         
         let service = Webservice()
@@ -118,8 +115,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 }
         }) { (err) in
             print("URL is not responding \(String(describing: err))")
+            let global = Singleton.sharedInstance()
+            global.showAlert(controllerTitle: Constants.ALERT_SERVER_ERROR, alertCancelTitle: Constants.ALERT_SERVER_OK, alertMessage: Constants.ALERT_SERVER_MESSAGE)
         }
-        //        }
     }
     
     func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
@@ -144,16 +142,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 
 extension MapViewController: MKMapViewDelegate {
     
-    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-        
-    }
+//    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
+//
+//    }
     
     
     private func centerMap(on coordinate: CLLocationCoordinate2D) {
-        
-        let serialQueue = DispatchQueue(label: "com.test.mySerialQueue")
+        let serialQueue = DispatchQueue(label: "com.emon.mySerialQueue")
         serialQueue.sync {
-            // code
             displayingVehicleInMap()
         }
     }
@@ -183,7 +179,6 @@ extension MapViewController: MKMapViewDelegate {
                 self.mapView.addAnnotation(anno)
             }
             self.mapView.showAnnotations(self.mapView.annotations, animated: true)
-            
         }
     }
     
@@ -191,9 +186,6 @@ extension MapViewController: MKMapViewDelegate {
         if annotation is MKUserLocation{
             return nil;
         }else{
-            //            if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
-            //                MBProgressHUD.hide(for: window, animated: true)
-            //            }
             let pinIdent = "Pin";
             var pinView: MKPinAnnotationView;
             if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: pinIdent) as? MKPinAnnotationView {

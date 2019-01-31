@@ -15,7 +15,6 @@ import CoreLocation
     @objc public func loadVehicleWhileUserChangePosition(northEast: CLLocationCoordinate2D, southWest: CLLocationCoordinate2D, onSuccess success: @escaping (_ JSONArray: Any) -> Void, onFailure failure: @escaping (_ error: Error?) -> Void) {
         
         print("Northest : \(northEast) and Southwest: \(southWest)")
-        var tableData = [Vehicle]()
         let url_string = "\(Constants.base_url)?p2Lat=\(northEast.latitude)&p1Lon=\(northEast.longitude)&p1Lat=\(southWest.latitude)&p2Lon=\(southWest.longitude)"
         print(url_string)
         let myUrl = NSURL(string: url_string)
