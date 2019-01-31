@@ -18,9 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UITabBar.appearance().barTintColor = UIColor.init(red: 70/255, green: 73/255, blue: 71/255, alpha: 1.0)
         UITabBar.appearance().tintColor =  UIColor.init(red: 245/255, green: 188/255, blue: 54/255, alpha: 1.0)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: "Helvetica-bold", size: 13)!], for: .normal)
         UINavigationBar.appearance().barTintColor = UIColor.init(red: 70/255, green: 73/255, blue: 71/255, alpha: 1.0)
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.init(red: 245/255, green: 188/255, blue: 54/255, alpha: 1.0)]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.init(red: 245/255, green: 188/255, blue: 54/255, alpha: 1.0), NSAttributedString.Key.font : UIFont(name: "Helvetica-bold", size: 22)!]
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.font : UIFont(name: "Helvetica-bold", size: 15)!]
 
+
+        
         return true
     }
 
