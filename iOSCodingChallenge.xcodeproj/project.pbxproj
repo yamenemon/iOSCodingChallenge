@@ -25,6 +25,8 @@
 		9AF6F64C2202E222004B80A9 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6F64B2202E221004B80A9 /* MapViewModel.swift */; };
 		9AF6F65B22032BC9004B80A9 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6F65A22032BC9004B80A9 /* Webservice.swift */; };
 		9AF6F65E22032D99004B80A9 /* VehicleListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6F65D22032D99004B80A9 /* VehicleListViewModel.m */; };
+		9AF6F6622203610F004B80A9 /* MapViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6F6612203610F004B80A9 /* MapViewModelTests.swift */; };
+		9AF6F66422036988004B80A9 /* VahicleListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6F66322036988004B80A9 /* VahicleListViewModelTests.swift */; };
 		A45218D13493BF7D8788DAC1 /* Pods_iOSCodingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0BFB649CEC8FD7AEBDB31C /* Pods_iOSCodingChallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		9AF6F65A22032BC9004B80A9 /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		9AF6F65C22032D99004B80A9 /* VehicleListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VehicleListViewModel.h; sourceTree = "<group>"; };
 		9AF6F65D22032D99004B80A9 /* VehicleListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VehicleListViewModel.m; sourceTree = "<group>"; };
+		9AF6F6612203610F004B80A9 /* MapViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModelTests.swift; sourceTree = "<group>"; };
+		9AF6F66322036988004B80A9 /* VahicleListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VahicleListViewModelTests.swift; sourceTree = "<group>"; };
 		CD7F0AF878C1ECC32B1EF57E /* Pods-iOSCodingChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCodingChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCodingChallenge/Pods-iOSCodingChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		DF0BFB649CEC8FD7AEBDB31C /* Pods_iOSCodingChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSCodingChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,6 +145,8 @@
 			isa = PBXGroup;
 			children = (
 				9AF4FE7A21FB61E8006DDD17 /* iOSCodingChallengeTests.swift */,
+				9AF6F6612203610F004B80A9 /* MapViewModelTests.swift */,
+				9AF6F66322036988004B80A9 /* VahicleListViewModelTests.swift */,
 				9AF4FE7C21FB61E8006DDD17 /* Info.plist */,
 			);
 			path = iOSCodingChallengeTests;
@@ -417,6 +423,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AF4FE7B21FB61E8006DDD17 /* iOSCodingChallengeTests.swift in Sources */,
+				9AF6F6622203610F004B80A9 /* MapViewModelTests.swift in Sources */,
+				9AF6F66422036988004B80A9 /* VahicleListViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
