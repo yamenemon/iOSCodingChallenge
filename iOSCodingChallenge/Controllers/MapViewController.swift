@@ -141,12 +141,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 }
 
 extension MapViewController: MKMapViewDelegate {
-    
-//    func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-//
-//    }
-    
-    
+
     private func centerMap(on coordinate: CLLocationCoordinate2D) {
         let serialQueue = DispatchQueue(label: "com.emon.mySerialQueue")
         serialQueue.sync {
@@ -175,27 +170,31 @@ extension MapViewController: MKMapViewDelegate {
                 let anno = MKPointAnnotation()
                 
                 anno.coordinate = CLLCoordType
-                anno.title = "Test annotation"
+                anno.title = "Car annotation"
                 self.mapView.addAnnotation(anno)
             }
             self.mapView.showAnnotations(self.mapView.annotations, animated: true)
         }
     }
-    
+
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if annotation is MKUserLocation{
-            return nil;
-        }else{
-            let pinIdent = "Pin";
-            var pinView: MKPinAnnotationView;
-            if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: pinIdent) as? MKPinAnnotationView {
-                dequeuedView.annotation = annotation;
-                pinView = dequeuedView;
-            }else{
-                pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: pinIdent);
-            }
-            return pinView;
+        let identifier = "MyPin"
+        
+        if annotation is MKUserLocation {
+            return nil
         }
+        
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView?.canShowCallout = true
+            annotationView?.image = UIImage(named: "cartab.png")
+        } else {
+            annotationView?.annotation = annotation
+        }
+        
+        return annotationView
     }
 }
 
