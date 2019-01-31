@@ -130,13 +130,13 @@
 		9AF4FE6221FB61E4006DDD17 /* iOSCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				9AF6F65922032BA9004B80A9 /* Webservice */,
 				9AF4FE8D21FB6A22006DDD17 /* AppDelegate */,
+				9AF6F65922032BA9004B80A9 /* Webservice */,
 				9AF4FE8C21FB6965006DDD17 /* Controllers */,
-				9AF4FE8E21FB6A39006DDD17 /* Resources */,
 				9AF4FE8921FB651C006DDD17 /* ViewModel */,
-				9AF4FE8B21FB6537006DDD17 /* Model */,
 				9AF4FE8A21FB652B006DDD17 /* View */,
+				9AF4FE8B21FB6537006DDD17 /* Model */,
+				9AF4FE8E21FB6A39006DDD17 /* Resources */,
 			);
 			path = iOSCodingChallenge;
 			sourceTree = "<group>";
