@@ -26,11 +26,11 @@
                             </constraints>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vehicle ID :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xbk-mi-YgS">
-                            <rect key="frame" x="98" y="10" width="78" height="25"/>
+                            <rect key="frame" x="98" y="10" width="74" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="rL9-gb-c7c"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="13"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -39,7 +39,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="78" id="O3n-WY-BuO"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="13"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -48,19 +48,19 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="65" id="0WO-b8-uyY"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="13"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="56.16080235510343" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8us-7e-d6a">
                             <rect key="frame" x="313" y="38" width="202" height="25"/>
-                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="13"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lat: 53.571531148348896 Lon: 9.935517504395781" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wre-Kr-5P6">
                             <rect key="frame" x="184" y="67" width="331" height="25"/>
-                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="12"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -69,7 +69,7 @@
                             <constraints>
                                 <constraint firstAttribute="width" constant="84" id="RVZ-bW-m1J"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Georgia-Bold" family="Georgia" pointSize="13"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -78,13 +78,13 @@
                             <constraints>
                                 <constraint firstAttribute="width" secondItem="iTB-yM-rx1" secondAttribute="height" multiplier="12:5" id="pNM-C7-6FK"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="13"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wd-M5-JFo">
-                            <rect key="frame" x="179" y="10" width="336" height="25"/>
-                            <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="13"/>
+                            <rect key="frame" x="175" y="10" width="340" height="25"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>

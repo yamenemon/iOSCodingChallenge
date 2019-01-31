@@ -61,8 +61,8 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:Constants.TABLE_CELL_IDENTIFIER owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
-    Vehicle *tempVehicle = [_tableData objectAtIndex:indexPath.row];
+    NSMutableArray *temp = [_tableData objectAtIndex:indexPath.section];
+    Vehicle *tempVehicle = [temp objectAtIndex:indexPath.row];
     cell.vehicleId.text = [NSString stringWithFormat:@"%.00f",tempVehicle.vehicleId];
     cell.fleettype.text = [NSString stringWithFormat:@"%@",tempVehicle.fleetType];
     cell.heading.text = [NSString stringWithFormat:@"%f",tempVehicle.heading];
@@ -71,9 +71,29 @@
 }
 
 - (NSInteger)tableView:(nonnull UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [_tableData count];
+    return [[_tableData objectAtIndex:section] count];
+}
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return _tableData.count;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return Constants.TABLEVIEW_CELL_HEIGHT;
+}
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 40;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    Singleton *global = [Singleton sharedInstance];
+    UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width,40)];
+    headerView.backgroundColor = [global hexStringToUIColorWithHex:@"0facd3b"];
+    UILabel *headerTextLabel = [[UILabel alloc] initWithFrame:CGRectMake(5, 0, tableView.frame.size.width - 10, 40)];
+    headerTextLabel.backgroundColor = [global hexStringToUIColorWithHex:@"0facd3b"];
+    headerTextLabel.textColor = [UIColor whiteColor];
+    headerTextLabel.font = [UIFont boldSystemFontOfSize:18];
+    NSMutableArray *temp = [_tableData objectAtIndex:section];
+    Vehicle *tempVehicle = [temp objectAtIndex:0];
+    headerTextLabel.text = [NSString stringWithFormat:@"Vehicle Type : %@",tempVehicle.fleetType];
+    [headerView addSubview:headerTextLabel];
+    return headerView;
 }
 @end
