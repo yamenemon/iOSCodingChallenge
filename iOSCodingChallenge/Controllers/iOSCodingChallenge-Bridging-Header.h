@@ -10,4 +10,5 @@
 #define iOSCodingChallenge_Bridging_Header_h
 
 #import "VehicleListViewController.h"
+#import "Vehicle.h"
 #endif /* iOSCodingChallenge_Bridging_Header_h */

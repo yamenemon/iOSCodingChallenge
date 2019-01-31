@@ -14,7 +14,6 @@
 		9A0EEB5221FCC00A000E5EF0 /* Vehicle.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0EEB5121FCC00A000E5EF0 /* Vehicle.m */; };
 		9A0EEB5621FCF194000E5EF0 /* VehicleListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A0EEB5521FCF194000E5EF0 /* VehicleListCell.xib */; };
 		9A0EEB5921FCF20A000E5EF0 /* VehicleListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A0EEB5821FCF20A000E5EF0 /* VehicleListCell.m */; };
-		9A78AB1822018A6E006E4719 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A78AB1722018A6E006E4719 /* MapViewModel.swift */; };
 		9AF4FE6421FB61E4006DDD17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6321FB61E4006DDD17 /* AppDelegate.swift */; };
 		9AF4FE6B21FB61E4006DDD17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6921FB61E4006DDD17 /* Main.storyboard */; };
 		9AF4FE6D21FB61E8006DDD17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AF4FE6C21FB61E8006DDD17 /* Assets.xcassets */; };
@@ -22,8 +21,8 @@
 		9AF4FE7B21FB61E8006DDD17 /* iOSCodingChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE7A21FB61E8006DDD17 /* iOSCodingChallengeTests.swift */; };
 		9AF4FE8821FB6247006DDD17 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE8721FB6247006DDD17 /* MapViewController.swift */; };
 		9AF4FE9021FB6AC3006DDD17 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE8F21FB6AC3006DDD17 /* Constants.swift */; };
-		9AF4FE9421FB7651006DDD17 /* VehicleMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE9321FB7651006DDD17 /* VehicleMapViewModel.swift */; };
 		9AF4FE9821FB81A5006DDD17 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF4FE9721FB81A5006DDD17 /* Default-568h@2x.png */; };
+		9AF6F64C2202E222004B80A9 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6F64B2202E221004B80A9 /* MapViewModel.swift */; };
 		A45218D13493BF7D8788DAC1 /* Pods_iOSCodingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0BFB649CEC8FD7AEBDB31C /* Pods_iOSCodingChallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		9A0EEB5521FCF194000E5EF0 /* VehicleListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VehicleListCell.xib; sourceTree = "<group>"; };
 		9A0EEB5721FCF20A000E5EF0 /* VehicleListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VehicleListCell.h; sourceTree = "<group>"; };
 		9A0EEB5821FCF20A000E5EF0 /* VehicleListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VehicleListCell.m; sourceTree = "<group>"; };
-		9A78AB1722018A6E006E4719 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewModel.swift; path = ../../../../../Documents/MapViewModel.swift; sourceTree = "<group>"; };
 		9AF4FE6021FB61E4006DDD17 /* iOSCodingChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSCodingChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AF4FE6321FB61E4006DDD17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9AF4FE6A21FB61E4006DDD17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,8 +63,8 @@
 		9AF4FE7C21FB61E8006DDD17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AF4FE8721FB6247006DDD17 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9AF4FE8F21FB6AC3006DDD17 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		9AF4FE9321FB7651006DDD17 /* VehicleMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleMapViewModel.swift; sourceTree = "<group>"; };
 		9AF4FE9721FB81A5006DDD17 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9AF6F64B2202E221004B80A9 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		CD7F0AF878C1ECC32B1EF57E /* Pods-iOSCodingChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCodingChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCodingChallenge/Pods-iOSCodingChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		DF0BFB649CEC8FD7AEBDB31C /* Pods_iOSCodingChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSCodingChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -145,9 +143,9 @@
 		9AF4FE8921FB651C006DDD17 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9AF6F64B2202E221004B80A9 /* MapViewModel.swift */,
 				9A0EEB5721FCF20A000E5EF0 /* VehicleListCell.h */,
 				9A0EEB5821FCF20A000E5EF0 /* VehicleListCell.m */,
-				9A78AB1722018A6E006E4719 /* MapViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -169,7 +167,6 @@
 				9A0EEB4E21FCBE06000E5EF0 /* Coordinate.m */,
 				9A0EEB5021FCC00A000E5EF0 /* Vehicle.h */,
 				9A0EEB5121FCC00A000E5EF0 /* Vehicle.m */,
-				9AF4FE9321FB7651006DDD17 /* VehicleMapViewModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -386,13 +383,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DC40C7621FD72E600A8E681 /* Singleton.swift in Sources */,
+				9AF6F64C2202E222004B80A9 /* MapViewModel.swift in Sources */,
 				9AF4FE6421FB61E4006DDD17 /* AppDelegate.swift in Sources */,
 				9A0EEB5921FCF20A000E5EF0 /* VehicleListCell.m in Sources */,
 				9A0EEB5221FCC00A000E5EF0 /* Vehicle.m in Sources */,
 				9A0EEB4A21FC9850000E5EF0 /* VehicleListViewController.m in Sources */,
 				9AF4FE8821FB6247006DDD17 /* MapViewController.swift in Sources */,
-				9AF4FE9421FB7651006DDD17 /* VehicleMapViewModel.swift in Sources */,
-				9A78AB1822018A6E006E4719 /* MapViewModel.swift in Sources */,
 				9AF4FE9021FB6AC3006DDD17 /* Constants.swift in Sources */,
 				9A0EEB4F21FCBE06000E5EF0 /* Coordinate.m in Sources */,
 			);

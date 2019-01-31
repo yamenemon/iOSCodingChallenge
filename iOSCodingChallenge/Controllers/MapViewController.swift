@@ -13,7 +13,6 @@ import CoreLocation
 
 class MapViewController: UIViewController, CLLocationManagerDelegate {
     
-    private var cars: [VehicleMapViewModel] = [] 
     private var locationManager = CLLocationManager()
     private var geofenceRegionCenter: CLLocationCoordinate2D!
     private var tableData: Array<Vehicle>!
