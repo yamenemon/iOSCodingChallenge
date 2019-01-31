@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Vehicle.h"
+#import "VehicleListViewModel.h"
 @class Constants;
-@class MapViewModel;
 @class Extension;
+@class Webservice;
 
 NS_ASSUME_NONNULL_BEGIN
 

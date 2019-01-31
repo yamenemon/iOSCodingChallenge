@@ -23,6 +23,8 @@
 		9AF4FE9021FB6AC3006DDD17 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF4FE8F21FB6AC3006DDD17 /* Constants.swift */; };
 		9AF4FE9821FB81A5006DDD17 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9AF4FE9721FB81A5006DDD17 /* Default-568h@2x.png */; };
 		9AF6F64C2202E222004B80A9 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6F64B2202E221004B80A9 /* MapViewModel.swift */; };
+		9AF6F65B22032BC9004B80A9 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6F65A22032BC9004B80A9 /* Webservice.swift */; };
+		9AF6F65E22032D99004B80A9 /* VehicleListViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6F65D22032D99004B80A9 /* VehicleListViewModel.m */; };
 		A45218D13493BF7D8788DAC1 /* Pods_iOSCodingChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF0BFB649CEC8FD7AEBDB31C /* Pods_iOSCodingChallengeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,9 @@
 		9AF4FE8F21FB6AC3006DDD17 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		9AF4FE9721FB81A5006DDD17 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9AF6F64B2202E221004B80A9 /* MapViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		9AF6F65A22032BC9004B80A9 /* Webservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		9AF6F65C22032D99004B80A9 /* VehicleListViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VehicleListViewModel.h; sourceTree = "<group>"; };
+		9AF6F65D22032D99004B80A9 /* VehicleListViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VehicleListViewModel.m; sourceTree = "<group>"; };
 		CD7F0AF878C1ECC32B1EF57E /* Pods-iOSCodingChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSCodingChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSCodingChallenge/Pods-iOSCodingChallenge.release.xcconfig"; sourceTree = "<group>"; };
 		DF0BFB649CEC8FD7AEBDB31C /* Pods_iOSCodingChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iOSCodingChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -121,6 +126,7 @@
 		9AF4FE6221FB61E4006DDD17 /* iOSCodingChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				9AF6F65922032BA9004B80A9 /* Webservice */,
 				9AF4FE8D21FB6A22006DDD17 /* AppDelegate */,
 				9AF4FE8C21FB6965006DDD17 /* Controllers */,
 				9AF4FE8E21FB6A39006DDD17 /* Resources */,
@@ -144,6 +150,8 @@
 			isa = PBXGroup;
 			children = (
 				9AF6F64B2202E221004B80A9 /* MapViewModel.swift */,
+				9AF6F65C22032D99004B80A9 /* VehicleListViewModel.h */,
+				9AF6F65D22032D99004B80A9 /* VehicleListViewModel.m */,
 				9A0EEB5721FCF20A000E5EF0 /* VehicleListCell.h */,
 				9A0EEB5821FCF20A000E5EF0 /* VehicleListCell.m */,
 			);
@@ -200,6 +208,14 @@
 				0DC40C7521FD72E600A8E681 /* Singleton.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9AF6F65922032BA9004B80A9 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				9AF6F65A22032BC9004B80A9 /* Webservice.swift */,
+			);
+			path = Webservice;
 			sourceTree = "<group>";
 		};
 		C8E54CE51392E2FF9926133E /* Pods */ = {
@@ -383,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DC40C7621FD72E600A8E681 /* Singleton.swift in Sources */,
+				9AF6F65E22032D99004B80A9 /* VehicleListViewModel.m in Sources */,
 				9AF6F64C2202E222004B80A9 /* MapViewModel.swift in Sources */,
 				9AF4FE6421FB61E4006DDD17 /* AppDelegate.swift in Sources */,
 				9A0EEB5921FCF20A000E5EF0 /* VehicleListCell.m in Sources */,
@@ -390,6 +407,7 @@
 				9A0EEB4A21FC9850000E5EF0 /* VehicleListViewController.m in Sources */,
 				9AF4FE8821FB6247006DDD17 /* MapViewController.swift in Sources */,
 				9AF4FE9021FB6AC3006DDD17 /* Constants.swift in Sources */,
+				9AF6F65B22032BC9004B80A9 /* Webservice.swift in Sources */,
 				9A0EEB4F21FCBE06000E5EF0 /* Coordinate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

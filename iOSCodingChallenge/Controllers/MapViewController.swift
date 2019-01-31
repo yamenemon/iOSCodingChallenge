@@ -27,7 +27,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = Constants.MAP_VIEW_TITLE;
-
+        
         determineCurrentLocation()
     }
     
@@ -50,13 +50,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     {
         // 2. setup locationManager
         locationManager.delegate = self;
-//        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
+        //        locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters;
         locationManager.distanceFilter = 100.0;
         locationManager.desiredAccuracy = kCLLocationAccuracyBest;
         locationManager.requestAlwaysAuthorization()
         
         
-
+        
         // 3. setup mapView
         mapView.delegate = self
         mapView.showsUserLocation = true
@@ -86,7 +86,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let userLocation:CLLocation = locations[0] as CLLocation
         guard let _: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { return }
-
+        
         let center = CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
         
         if currentPosition == nil {
@@ -96,28 +96,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         let coordinate1 = userLocation
         let distanceInMeters = coordinate0!.distance(from: coordinate1)
         print(distanceInMeters)
-
+        
         let regions = CLCircularRegion(center: center, radius: CLLocationDistance(mapView.bounds.width), identifier: "Your Location")
-            locationManager.startMonitoring(for: regions)
-            
-            let mapViewModel = MapViewModel()
-            
-            guard let _: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { return }
-            self.centerMap(on: (self.locationManager.location?.coordinate)!)
-            
-            let northEast = mapView.convert(CGPoint(x: mapView.bounds.width, y: 0), toCoordinateFrom: mapView)
-            let southWest = mapView.convert(CGPoint(x: 0, y: mapView.bounds.height), toCoordinateFrom: mapView)
-            
-            mapViewModel.loadVehicleWhileUserChangePosition(northEast: northEast, southWest: southWest
-                , onSuccess: { (data) in
-                    self.tableData = (data as! Array<Vehicle>)
-                    DispatchQueue.main.sync {
-                        self.displayingVehicleInMap()
-                    }
-            }) { (err) in
-                print("URL is not responding \(String(describing: err))")
-            }
-//        }
+        locationManager.startMonitoring(for: regions)
+        
+        let service = Webservice()
+        
+        guard let _: CLLocationCoordinate2D = self.locationManager.location?.coordinate else { return }
+        self.centerMap(on: (self.locationManager.location?.coordinate)!)
+        
+        let northEast = mapView.convert(CGPoint(x: mapView.bounds.width, y: 0), toCoordinateFrom: mapView)
+        let southWest = mapView.convert(CGPoint(x: 0, y: mapView.bounds.height), toCoordinateFrom: mapView)
+        
+        service.loadVehicleWhileUserChangePosition(northEast: northEast, southWest: southWest
+            , onSuccess: { (data) in
+                let mapViewModel = MapViewModel()
+                let sortedData = mapViewModel.tableDataSorting(dictionaryData: data as! [NSDictionary])
+                self.tableData = (sortedData)
+                DispatchQueue.main.sync {
+                    self.displayingVehicleInMap()
+                }
+        }) { (err) in
+            print("URL is not responding \(String(describing: err))")
+        }
+        //        }
     }
     
     func locationManager(_ manager: CLLocationManager, didStartMonitoringFor region: CLRegion) {
@@ -141,12 +143,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 }
 
 extension MapViewController: MKMapViewDelegate {
-
+    
     func mapView(_ mapView: MKMapView, didUpdate userLocation: MKUserLocation) {
-
+        
     }
     
-
+    
     private func centerMap(on coordinate: CLLocationCoordinate2D) {
         
         let serialQueue = DispatchQueue(label: "com.test.mySerialQueue")
@@ -189,9 +191,9 @@ extension MapViewController: MKMapViewDelegate {
         if annotation is MKUserLocation{
             return nil;
         }else{
-//            if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
-//                MBProgressHUD.hide(for: window, animated: true)
-//            }
+            //            if let app = UIApplication.shared.delegate as? AppDelegate, let window = app.window {
+            //                MBProgressHUD.hide(for: window, animated: true)
+            //            }
             let pinIdent = "Pin";
             var pinView: MKPinAnnotationView;
             if let dequeuedView = mapView.dequeueReusableAnnotationView(withIdentifier: pinIdent) as? MKPinAnnotationView {
